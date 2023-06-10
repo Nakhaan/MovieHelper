@@ -1,0 +1,9 @@
+{
+    "root": true,
+    "extends": [
+        /**
+         *  Possible values: 'recommended (strict) | moderate (less stricter)'
+         */
+        "@hug/eslint-config/recommended"
+    ]
+}
