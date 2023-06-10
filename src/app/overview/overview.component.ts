@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-overview',
@@ -15,7 +16,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
         MatButtonModule,
         MatIconModule,
         MatListModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        RouterModule
     ],
     templateUrl: './overview.component.html',
     styleUrls: ['./overview.component.scss'],
