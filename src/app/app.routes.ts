@@ -5,6 +5,7 @@ import { AccountComponent } from './account/account.component';
 import { LayoutComponent } from './layout/layout.component';
 import { OverviewComponent } from './overview/overview.component';
 import { PreprodComponent } from './overview/preprod/preprod.component';
+import { ShotlistComponent } from './overview/preprod/shotlist/shotlist.component';
 
 export const routes: Routes = [{
     path: '',
@@ -17,6 +18,10 @@ export const routes: Routes = [{
         {
             path: 'preprod',
             component: PreprodComponent
+        },
+        {
+            path: 'shotlist',
+            component: ShotlistComponent
         },
         {
             path: 'account',
