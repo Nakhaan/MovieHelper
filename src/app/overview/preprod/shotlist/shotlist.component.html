@@ -11,7 +11,7 @@
 
 <mat-card>
     <mat-card-content>
-        <div *ngFor="let row of data; let i = index">
+        <div *ngFor="let row of data$ | async; let i = index">
             <div class="flex-container">
                 <div class="flex-item" *ngFor="let item of row | keyvalue">{{ item.value }}</div>
             </div>
