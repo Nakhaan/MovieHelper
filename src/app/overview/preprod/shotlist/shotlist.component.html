@@ -1,1 +1,33 @@
-<p>shotlist works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title class="center-text">Découpage Technique</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="flex-container">
+            <div class="flex-item" *ngFor="let keyword of keywords">{{ keyword }}</div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-content>
+        <div *ngFor="let row of data; let i = index">
+            <div class="flex-container">
+                <div class="flex-item" *ngFor="let item of row | keyvalue">{{ item.value }}</div>
+            </div>
+            <button mat-icon-button (click)="removeRow(i)">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <mat-divider *ngIf="i < data.length - 1"></mat-divider>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <form [formGroup]="form" class="form">
+        <mat-form-field class="form-field" *ngFor="let control of form.controls | keyvalue">
+            <input matInput [formControlName]="control.key" placeholder="Colonne {{ control.key }}">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="addRow()">Ajouter</button>
+    </form>
+</mat-card>
