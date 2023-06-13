@@ -25,12 +25,14 @@
             <div class="flex-description mid-screen">Description</div>
             <div class="divider-v mid-screen"></div>
             <div class="flex-temps long">Durée</div>
-            <div class="flex-temps short">Tps</div>
+            <div class="flex-temps short">Durée</div>
+            <div class="divider-v long"></div>
+            <div class="flex-actions long">Actions</div>
         </div>
     </mat-card>
 
     <mat-card class="content">
-        <div>
+        <div matRipple (click)="onClick($event)" class="clickable-div">
             <div class="flex-container">
                 <div class="flex-scene">100</div>
                 <div class="divider-v"></div>
@@ -51,6 +53,9 @@
                 <div class="flex-description mid-screen">Description</div>
                 <div class="divider-v mid-screen"></div>
                 <div class="flex-temps">123min</div>
+                <div class="divider-v long"></div>
+                <div class="flex-actions long"><button mat-icon-button
+                        class="always-clickable-button"><mat-icon>delete</mat-icon></button></div>
             </div>
             <mat-divider></mat-divider>
         </div>
@@ -75,6 +80,8 @@
                 <div class="flex-description mid-screen">Description</div>
                 <div class="divider-v mid-screen"></div>
                 <div class="flex-temps">123min</div>
+                <div class="divider-v long"></div>
+                <div class="flex-actions long"><button mat-icon-button><mat-icon>delete</mat-icon></button></div>
             </div>
             <mat-divider></mat-divider>
         </div>
@@ -99,6 +106,8 @@
                 <div class="flex-description mid-screen">Description</div>
                 <div class="divider-v mid-screen"></div>
                 <div class="flex-temps">123min</div>
+                <div class="divider-v long"></div>
+                <div class="flex-actions long"><button mat-icon-button><mat-icon>delete</mat-icon></button></div>
             </div>
             <mat-divider></mat-divider>
         </div>
@@ -123,6 +132,8 @@
                 <div class="flex-description mid-screen">Description</div>
                 <div class="divider-v mid-screen"></div>
                 <div class="flex-temps">123min</div>
+                <div class="divider-v long"></div>
+                <div class="flex-actions long"><button mat-icon-button><mat-icon>delete</mat-icon></button></div>
             </div>
             <mat-divider></mat-divider>
         </div>
@@ -147,6 +158,8 @@
                 <div class="flex-description mid-screen">Description</div>
                 <div class="divider-v mid-screen"></div>
                 <div class="flex-temps">123min</div>
+                <div class="divider-v long"></div>
+                <div class="flex-actions long"><button mat-icon-button><mat-icon>delete</mat-icon></button></div>
             </div>
             <mat-divider></mat-divider>
         </div>
@@ -171,6 +184,8 @@
                 <div class="flex-description mid-screen">Description</div>
                 <div class="divider-v mid-screen"></div>
                 <div class="flex-temps">123min</div>
+                <div class="divider-v long"></div>
+                <div class="flex-actions long"><button mat-icon-button><mat-icon>delete</mat-icon></button></div>
             </div>
             <mat-divider></mat-divider>
         </div>
@@ -195,6 +210,8 @@
                 <div class="flex-description mid-screen">Description</div>
                 <div class="divider-v mid-screen"></div>
                 <div class="flex-temps">123min</div>
+                <div class="divider-v long"></div>
+                <div class="flex-actions long"><button mat-icon-button><mat-icon>delete</mat-icon></button></div>
             </div>
             <mat-divider></mat-divider>
         </div>
@@ -219,6 +236,8 @@
                 <div class="flex-description mid-screen">Description</div>
                 <div class="divider-v mid-screen"></div>
                 <div class="flex-temps">123min</div>
+                <div class="divider-v long"></div>
+                <div class="flex-actions long"><button mat-icon-button><mat-icon>delete</mat-icon></button></div>
             </div>
             <mat-divider></mat-divider>
         </div>
@@ -243,12 +262,14 @@
                 <div class="flex-description mid-screen">Description</div>
                 <div class="divider-v mid-screen"></div>
                 <div class="flex-temps">123min</div>
+                <div class="divider-v long"></div>
+                <div class="flex-actions long"><button mat-icon-button><mat-icon>delete</mat-icon></button></div>
             </div>
             <mat-divider></mat-divider>
         </div>
 
     </mat-card>
-    <!-- <div>
+    <div>
         <mat-card>
             <form [formGroup]="form" class="form">
                 <mat-form-field class="form-field" *ngFor="let control of form.controls | keyvalue">
@@ -257,5 +278,5 @@
                 <button mat-raised-button color="primary" (click)="addRow()">Ajouter</button>
             </form>
         </mat-card>
-    </div> -->
+    </div>
 </div>

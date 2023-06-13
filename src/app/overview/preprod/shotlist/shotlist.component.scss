@@ -92,6 +92,15 @@ mat-card {
                 font-size: larger;
                 font-weight: 500;
             }
+            .flex-actions {
+                align-self: center;
+                text-align: center;
+                width: 1px;
+                overflow: auto;
+                flex-grow: 1;
+                font-size: larger;
+                font-weight: 500;
+            }
         }
     }
 
@@ -159,6 +168,13 @@ mat-card {
                 overflow: auto;
                 flex-grow: 1;
             }
+            .flex-actions {
+                align-self: center;
+                text-align: center;
+                width: 1px;
+                overflow: auto;
+                flex-grow: 1;
+            }
         }
     }
 }
@@ -181,5 +197,11 @@ mat-card {
 
     .long {
         display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .clickable-div {
+        pointer-events: none;
     }
 }

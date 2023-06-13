@@ -8,7 +8,8 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BehaviorSubject, Observable, combineLatestWith, map, of } from 'rxjs';
-import {MatTableModule} from '@angular/material/table';
+import { MatRippleModule } from '@angular/material/core';
+import { Renderer2, ElementRef } from '@angular/core';
 
 interface Data {
   col1: string;
@@ -31,7 +32,8 @@ interface Data {
       FormsModule,
       ReactiveFormsModule,
       MatFormFieldModule,
-      MatInputModule
+      MatInputModule,
+      MatRippleModule
     ],
     templateUrl: './shotlist.component.html',
     styleUrls: ['./shotlist.component.scss'],
@@ -58,7 +60,7 @@ export class ShotlistComponent {
     col6: new FormControl(''),
   });
 
-  public constructor() {
+  public constructor(private renderer: Renderer2, private el: ElementRef) {
     this.data$ = this.refreshData$.pipe(
       combineLatestWith(of(this.data)),
       map(([data, dataList]) => {
@@ -71,6 +73,29 @@ export class ShotlistComponent {
     ;
   }
 
+  ngAfterViewInit() {
+    this.renderer.listen(window, 'resize', (event) => {
+      this.toggleClickableDiv(window.innerWidth);
+    });
+  
+    this.toggleClickableDiv(window.innerWidth);
+  }
+
+  toggleClickableDiv(width: number) {
+    const clickableDiv = this.el.nativeElement.querySelector('.clickable-div');
+    const alwaysClickableButton = this.el.nativeElement.querySelector('.always-clickable-button');
+  
+    if (width < 600) {
+      this.renderer.setStyle(clickableDiv, 'pointer-events', 'auto');
+    } else {
+      this.renderer.setStyle(clickableDiv, 'pointer-events', 'none');
+      this.renderer.setStyle(alwaysClickableButton, 'pointer-events', 'auto');
+    }
+  }
+  
+  
+  
+
   protected addRow() {
     this.refreshData$.next({ ...this.form.value })
     this.form.reset();
@@ -79,5 +104,13 @@ export class ShotlistComponent {
   protected removeRow(index: number) {
     this.data.splice(index, 1);
   }
+
+  onClick(event: Event) {
+    if (window.innerWidth < 600 && !(event.target instanceof HTMLButtonElement)) {
+      // Faites ce que vous voulez faire ici
+      alert('La div a été cliquée!');
+    }
+  }
+  
 
 }
