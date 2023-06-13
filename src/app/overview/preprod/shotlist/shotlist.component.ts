@@ -38,7 +38,7 @@ interface Data {
 })
 export class ShotlistComponent {
 
-  protected keywords = ["Scène","Plan","Valeur de plan","Angle","Mouvement","Temps Estim."];
+  protected keywords = ["Scène","Plan","Valeur de plan","Angle","Mouvement","Objectif","Ouverture","Acteurs","Description","Temps Estim."];
 
   protected data = [
     { col1: 'Scène', col2: 'Plan', col3: 'Valeur de plan',col4: 'Angle', col5: 'Mouvement', col6: 'Temps Estim.' },

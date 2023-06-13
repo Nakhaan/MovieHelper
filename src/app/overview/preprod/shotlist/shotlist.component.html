@@ -1,33 +1,69 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title class="center-text">Découpage Technique</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
+<div class="mat-card-wrapper">
+    <mat-card class="header">
+        <mat-card-title>Découpage Technique</mat-card-title>
         <div class="flex-container">
-            <div class="flex-item" *ngFor="let keyword of keywords">{{ keyword }}</div>
+            <div class="flex-scene long">Scène</div>
+            <div class="flex-scene short">#S</div>
+            <div class="divider-v"></div>
+            <div class="flex-plan long">Plan</div>
+            <div class="flex-plan short">#P</div>
+            <div class="divider-v"></div>
+            <div class="flex-vplan long">Valeur de plan</div>
+            <div class="flex-vplan short">Plan</div>
+            <div class="divider-v"></div>
+            <div class="flex-angle">Angle</div>
+            <div class="divider-v"></div>
+            <div class="flex-mouvement long">Mouvement</div>
+            <div class="flex-mouvement short">Mouv</div>
+            <div class="divider-v"></div>
+            <div class="flex-objectif small-screen">Objectif</div>
+            <div class="divider-v small-screen"></div>
+            <div class="flex-ouverture small-screen">Ouverture</div>
+            <div class="divider-v small-screen"></div>
+            <div class="flex-acteurs mid-screen">Acteurs</div>
+            <div class="divider-v mid-screen"></div>
+            <div class="flex-description mid-screen">Description</div>
+            <div class="divider-v mid-screen"></div>
+            <div class="flex-temps long">Temps Estimé</div>
+            <div class="flex-temps short">Tps</div>
         </div>
-    </mat-card-content>
-</mat-card>
+    </mat-card>
 
-<mat-card>
-    <mat-card-content>
-        <div *ngFor="let row of data$ | async; let i = index">
-            <div class="flex-container">
-                <div class="flex-item" *ngFor="let item of row | keyvalue">{{ item.value }}</div>
-            </div>
-            <button mat-icon-button (click)="removeRow(i)">
+    <mat-card class="content">
+        <div class="flex-container">
+            <div class="flex-scene">100</div>
+            <div class="divider-v"></div>
+            <div class="flex-plan">100</div>
+            <div class="divider-v"></div>
+            <div class="flex-vplan">Large</div>
+            <div class="divider-v"></div>
+            <div class="flex-angle">Dutch droit</div>
+            <div class="divider-v"></div>
+            <div class="flex-mouvement">Tracking</div>
+            <div class="divider-v"></div>
+            <div class="flex-objectif small-screen">100mm</div>
+            <div class="divider-v small-screen"></div>
+            <div class="flex-ouverture small-screen">f/22.2</div>
+            <div class="divider-v small-screen"></div>
+            <div class="flex-acteurs mid-screen">Acteurs</div>
+            <div class="divider-v mid-screen"></div>
+            <div class="flex-description mid-screen">Description</div>
+            <div class="divider-v mid-screen"></div>
+            <div class="flex-temps">123min</div>
+        </div>
+        <!-- <button mat-icon-button (click)="removeRow(i)">
                 <mat-icon>delete</mat-icon>
-            </button>
-            <mat-divider *ngIf="i < data.length - 1"></mat-divider>
-        </div>
-    </mat-card-content>
-</mat-card>
-
-<mat-card>
-    <form [formGroup]="form" class="form">
-        <mat-form-field class="form-field" *ngFor="let control of form.controls | keyvalue">
-            <input matInput [formControlName]="control.key" placeholder="Colonne {{ control.key }}">
-        </mat-form-field>
-        <button mat-raised-button color="primary" (click)="addRow()">Ajouter</button>
-    </form>
-</mat-card>
+            </button> -->
+        <mat-divider></mat-divider>
+    </mat-card>
+    <!-- <div>
+        <mat-card>
+            <form [formGroup]="form" class="form">
+                <mat-form-field class="form-field" *ngFor="let control of form.controls | keyvalue">
+                    <input matInput [formControlName]="control.key" placeholder="Colonne {{ control.key }}">
+                </mat-form-field>
+                <button mat-raised-button color="primary" (click)="addRow()">Ajouter</button>
+            </form>
+        </mat-card>
+    </div> -->
+</div>
