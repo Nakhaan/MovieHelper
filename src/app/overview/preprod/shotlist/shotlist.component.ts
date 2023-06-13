@@ -8,6 +8,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BehaviorSubject, Observable, combineLatestWith, map, of } from 'rxjs';
+import {MatTableModule} from '@angular/material/table';
 
 interface Data {
   col1: string;
@@ -78,4 +79,5 @@ export class ShotlistComponent {
   protected removeRow(index: number) {
     this.data.splice(index, 1);
   }
+
 }
