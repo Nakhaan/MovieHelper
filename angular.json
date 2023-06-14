@@ -35,7 +35,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "https://nakhaan.github.io/MovieHelper/",
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
