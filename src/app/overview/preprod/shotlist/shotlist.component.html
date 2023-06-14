@@ -275,7 +275,7 @@
                 <mat-form-field class="form-field" *ngFor="let control of form.controls | keyvalue">
                     <input matInput [formControlName]="control.key" placeholder="Colonne {{ control.key }}">
                 </mat-form-field>
-                <button mat-raised-button color="primary" (click)="addRow()">Ajouter</button>
+                <button mat-raised-button color="primary">Ajouter</button>
             </form>
         </mat-card>
     </div>
