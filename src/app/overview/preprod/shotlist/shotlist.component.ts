@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -59,7 +60,7 @@ export class ShotlistComponent {
         col6: new FormControl('')
     });
 
-    public constructor(private renderer: Renderer2, private el: ElementRef) {
+    public constructor() {
         this.data$ = this.refreshData$.pipe(
             combineLatestWith(of(this.data)),
             map(([data, dataList]) => {
